@@ -24,7 +24,14 @@ public class CLAMITest {
 		
 		CLAMI.main(args);
 	}
-
+	@Test
+	public void testMainTestInTestMain() {
+		
+		String[] args = {"-f","data/PP1-DP.arff","-l","label","-p", "buggy", "-m"};
+		
+		CLAMI.main(args);
+	}
+	
 	@Test
 	public void testCLAMIWithApacheProject() {
 		
@@ -68,7 +75,7 @@ public class CLAMITest {
 	@Test
 	public void testCLAMIWithApacheProjectToFindBestCutoffForPrecision() {
 		
-		// TASK5 TODO Use this method to find the best cutoff
+		// TASK4 TODO Use this method to find the best cutoff
 		
 		String bestCutoff = "50";
 		
@@ -80,7 +87,7 @@ public class CLAMITest {
 	@Test
 	public void testCLAMIWithApacheProjectToFindBestCutoffForFmeasure() {
 		
-		// TASK6 TODO Use this method to find the best cutoff for f-measure
+		// TASK5 TODO Use this method to find the best cutoff for f-measure
 		
 		String bestCutoff = "50";
 		

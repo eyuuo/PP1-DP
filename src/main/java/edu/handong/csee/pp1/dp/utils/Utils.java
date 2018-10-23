@@ -17,7 +17,7 @@ public class Utils {
 	static public ArrayList<File> getJavaFiles(String path){
 		ArrayList<File> files = new ArrayList<File>();
 		
-		File directory = new File(path);
+		File directory = new File(path);//파일안에 path를 저장한다. 끝나게 해야한다...directory가 아니면 자바 파일이라고 인식....
 		
 		if(!directory.exists()) {
 			System.err.println("Path is not existing. Check your git path!");

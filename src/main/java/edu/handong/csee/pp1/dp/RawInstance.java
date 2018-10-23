@@ -1,3 +1,4 @@
+//인스턴스 하나한에어떤 조건이 적용될지.
 package edu.handong.csee.pp1.dp;
 
 public class RawInstance {
@@ -7,7 +8,7 @@ public class RawInstance {
 	static public final int NUMMETRICS = 6;
 	// 인스턴스의 메트릭 값을 저장하는 field들.
 	int[] values = new int[NUMMETRICS];
-	
+	//다 저장된것을 파일로 저장하면 된다.
 	int linesOfCode;
 	int numOfVariables;
 	int numOfMethods;
