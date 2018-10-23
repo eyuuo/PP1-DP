@@ -38,7 +38,12 @@ public class MetricCollector {
 			System.out.println("Metric values were succesfully collected!");	
 	}
 
-	private void collectMetrics() {
+	private void collectMetrics() {//함수, 변수개수 다 셀려고... 파서:우리가 텍스트를 프로그램으로 읽거나 동영상,음악파일을 인풋으로받아서 우리가 원하는 형태로 바꾸는 과정이 필요한데. 그때 필요한 어플리케이션...같은 걸 파서라고 한다. 
+		//한글문장을 영어문장으로 바꾸려고 할ㄱ때, 이 문장안에서 주어 동사 목적어를 파악해야 하듯이. 나는>i 당신을<you 사랑합니다.>love 이런 것을 영어 문법으로 통해서 바꿔주는
+		//텍스트만 보면 몰라 임포트면 뭘 가져오고 기존의 코드를 태깅해주는 코드를 파서라고 한다. incoding decoding...이라고도 하지만.
+		//string을 문법에 맞춰서 잘라주고 그걸 ...
+		//eclipse 에서 쓸때 파일 열어보면 메쏘드(함수) 목록이 뜬다. >> 파서가 이클립스엔 꼭 필요하다...
+		
 		
 		for(File file:javaFiles) {
 			
@@ -51,12 +56,12 @@ public class MetricCollector {
 			// Abstract Syntax Tree는 자바 소스코드의 각 구성요소를 Tree 데이터 구조의 형태로 저장한 것임
 			// 예를들자면,
 			// int a = 1;라는 코드가 있다고 하면, int는 type a는 변수, 1은 값으로 분석한 내용이 저장되어 있음
-			JavaASTParser codeAST = new JavaASTParser(sourceCode);
+			JavaASTParser codeAST = new JavaASTParser(sourceCode);//파서읽기...
 			
 			// 각 파일별로 다양한 종류의 메트릭이 생성되면 instance라는 파일명 + 메트리값들의 한 줄데이터로 저장함.
 			// 이 것을 instance라고 부름.
 			// 인스턴스를 생성할 때, 파일 이름이 인스턴스으로 사용하도록 인스턴스에 파일이름을 저장하면, 새로운 인스턴스 생성.
-			RawInstance instance = new RawInstance(file.getPath());
+			RawInstance instance = new RawInstance(file.getPath());//메트릭, 라인 수, 메쏘드, 변수 개수 모으는 정보들이 저장되는데. 
 			
 			// (1) 첫번째 매트릭 계산: 가법게 코드 Line수 계산
 			// 계산 후 instance안에 있는 linesOfCode값 부여.
@@ -115,8 +120,8 @@ public class MetricCollector {
 	public void saveAnArffFile() {
 		if(Main.INFO)
 			System.out.println("Saving instances in " + arffFilePathToBeSaved);
-		Instances instances = WekaUtils.generateWekaInstances(rawInstances);
-		WekaUtils.writeADataFile(instances, arffFilePathToBeSaved);
+		Instances instances = WekaUtils.generateWekaInstances(rawInstances);//실제 인스턴스...
+		WekaUtils.writeADataFile(instances, arffFilePathToBeSaved);//교수님이 만든 함수.
 		Utils.writeADataFile(rawInstances, arffFilePathToBeSaved + ".file_path.txt");
 		if(Main.INFO)
 			System.out.println("Done");
