@@ -24,13 +24,6 @@ public class CLAMITest {
 		
 		CLAMI.main(args);
 	}
-	@Test
-	public void testMainTestInTestMain() {
-		
-		String[] args = {"-f","data/PP1-DP.arff","-l","label","-p", "buggy", "-m"};
-		
-		CLAMI.main(args);
-	}
 	
 	@Test
 	public void testCLAMIWithApacheProject() {
@@ -68,9 +61,33 @@ public class CLAMITest {
 		// complete this test case for the generated arff files from Task 2
 		
 		//String[] args = {"-f","data/[your_generated_metric_data].arff","-l","label","-p", "buggy", "-m"};
-		
-		//CLAMI.main(args);
+		String[] args = {"-f","data/PP1-DP.arff","-l","label","-p", "buggy", "-m"};
+		CLAMI.main(args);
 	}
+	
+	@Test
+	public void testCLAMIWithYourSelectedProject2() {
+		
+		// TASK3: Conduct defect prediction by using CLAMI models
+		// complete this test case for the generated arff files from Task 2
+		
+		//String[] args = {"-f","data/[your_generated_metric_data].arff","-l","label","-p", "buggy", "-m"};
+		String[] args = {"-f","data/java-1.arff","-l","label","-p", "buggy", "-m"};
+		CLAMI.main(args);
+	}
+	
+	@Test
+	public void testCLAMIWithYourSelectedProject3() {
+		
+		// TASK3: Conduct defect prediction by using CLAMI models
+		// complete this test case for the generated arff files from Task 2
+		
+		//String[] args = {"-f","data/[your_generated_metric_data].arff","-l","label","-p", "buggy", "-m"};
+		String[] args = {"-f","data/esapi-java.arff","-l","label","-p", "buggy", "-m"};
+		CLAMI.main(args);
+	}
+	
+	
 	
 	@Test
 	public void testCLAMIWithApacheProjectToFindBestCutoffForPrecision() {
