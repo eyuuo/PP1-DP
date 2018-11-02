@@ -120,7 +120,17 @@ public class CLAMITest {
 		
 		// TASK5 TODO Use this method to find the best cutoff for f-measure
 		
-		String bestCutoff = "50";
+		/* 60 : F1: 0.6666666666666667
+		 * 50 : F1: 0.7253886010362695
+		 * 44 : F1: 0.721951219512195
+		 * 43 : F1: 0.7272727272727272
+		 * 42 : F1: 0.7523809523809524
+		 * 41 : F1: 0.7476635514018692
+		 * 40 : F1: 0.7476635514018692
+		 * 38 : F1: 0.7272727272727273
+		 * 30 : F1: 0.7296137339055794
+		 * */
+		String bestCutoff = "55";
 		
 		String[] args = {"-f","data/Apache.arff","-l","isDefective","-p", "TRUE", "-m", "-c", bestCutoff};
 		CLAMI.main(args);
