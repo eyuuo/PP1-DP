@@ -92,9 +92,23 @@ public class CLAMITest {
 	@Test
 	public void testCLAMIWithApacheProjectToFindBestCutoffForPrecision() {
 		
-		// TASK4 TODO Use this method to find the best cutoff
+		// TASK4 TODO Use this method to find the best cutoff = 88
+		/*
+		50 : Precision: 0.7368421052631579
+		65 : Precision: 0.7647058823529411
+		70 : Precision: 0.7931034482758621
+		80 : Precision: 0.7941176470588235
+		83 : Precision: 0.7931034482758621
+		85 : Precision: 0.7931034482758621
+		86 : Precision: 0.8148148148148148
+		87 : Precision: 0.8076923076923077
+		88 : Precision: 0.8181818181818182 (v)
+		89 : Precision: 0.8
+		90 : Precision: 0.7894736842105263
+		91 : Precision: 0.7142857142857143
+		 */
 		
-		String bestCutoff = "50";
+		String bestCutoff = "88";
 		
 		String[] args = {"-f","data/Apache.arff","-l","isDefective","-p", "TRUE", "-m", "-c", bestCutoff};
 
@@ -109,7 +123,6 @@ public class CLAMITest {
 		String bestCutoff = "50";
 		
 		String[] args = {"-f","data/Apache.arff","-l","isDefective","-p", "TRUE", "-m", "-c", bestCutoff};
-
 		CLAMI.main(args);
 	}
 
